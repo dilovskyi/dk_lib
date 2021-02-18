@@ -1,0 +1,97 @@
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	border: 1px solid $primary;
+	background-color: transparent;
+	border-radius: 4px;
+	color: $dark;
+	font-weight: 400px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+	line-height: 1.5;
+	transition: all 0.2s;
+	&:hover {
+		background-color: lighten($danger, 10%);
+		color: #ffff;
+	}
+	&-primary {
+		background-color: $primary;
+		border-color: $primary;
+		color: #ffff;
+		&:hover {
+			background-color: darken($primary, 10%);
+		}
+	}
+	&-outline-primary {
+		border-color: $primary;
+		color: $primary;
+		&:hover {
+			background-color: $primary;
+		}
+	}
+	&-success {
+		background-color: $success;
+		border-color: $success;
+		color: #ffff;
+		&:hover {
+			background-color: darken($success, 10%);
+		}
+	}
+	&-outline-success {
+		border-color: $success;
+		color: $success;
+		&:hover {
+			background-color: $success;
+		}
+	}
+	&-danger {
+		background-color: $danger;
+		border-color: $danger;
+		color: #ffff;
+		&:hover {
+			background-color: darken($danger, 10%);
+		}
+	}
+	&-outline-danger {
+		border-color: $danger;
+		color: $danger;
+		&:hover {
+			background-color: $danger;
+		}
+	}
+	&-warning {
+		background-color: $warning;
+		border-color: $warning;
+		color: #ffff;
+		&:hover {
+			background-color: darken($warning, 10%);
+		}
+	}
+	&-outline-warning {
+		border-color: $warning;
+		color: $warning;
+		&:hover {
+			background-color: $warning;
+		}
+	}
+	&-dark {
+		background-color: $dark;
+		border-color: $dark;
+		color: #ffff;
+		&:hover {
+			background-color: darken($dark, 10%);
+		}
+	}
+	&-outline-dark {
+		border-color: $dark;
+		color: $dark;
+		&:hover {
+			background-color: $dark;
+		}
+	}
+	&-block {
+		display: block;
+		width: 100%;
+	}
+}
