@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
 
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.modal = function () {
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.modal = function (created) {
   for (let i = 0; i < this.length; i++) {
     const target = this[i].getAttribute("data-target");
     Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).click(e => {
@@ -131,24 +131,83 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.modal = function () {
       Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(target).fadeIn(500);
       document.body.style.overflow = "hidden";
     });
-  }
+    const id = document.querySelector(target);
+    const closeElemens = document.querySelectorAll(`${target} [data-close]`);
+    closeElemens.forEach(element => {
+      Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(element).click(() => {
+        Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(target).fadeOut(1500);
 
-  const closeElemens = document.querySelectorAll("[data-close]");
-  closeElemens.forEach(element => {
-    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(element).click(e => {
-      Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(".modal").fadeOut(500);
-      document.body.style.overflow = "";
+        if (created && id.style.opacity === 0) {
+          id.remove();
+        }
+
+        document.body.style.overflow = "";
+      });
     });
-  });
-  Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(".modal").click(e => {
-    if (e.target.classList.contains("modal")) {
-      Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(".modal").fadeOut(500);
-      document.body.style.overflow = "";
-    }
-  });
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(target).click(e => {
+      if (e.target.classList.contains("modal")) {
+        Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(target).fadeOut(500);
+        document.body.style.overflow = "";
+
+        if (created) {
+          id.remove();
+        }
+      }
+    });
+  }
 };
 
 Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])('[data-toggle="modal"]').modal();
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.createModal = function ({
+  text,
+  btns
+}) {
+  for (let i = 0; i < this.length; i++) {
+    let modal = document.createElement("div");
+    modal.classList.add("modal");
+    modal.setAttribute("id", this[i].getAttribute("data-target").slice(1));
+    modal.innerHTML = `
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <button class="close" data-close>
+          <span>&times;</span>
+        </button>
+        <div class="modal-header">
+          <div class="modal-title">${text.title}</div>
+        </div>
+        <div class="modal-body">
+        ${text.body}
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>`;
+    const buttons = [];
+
+    for (let j = 0; j < btns.count; j++) {
+      let btn = document.createElement("button");
+      btn.textContent = btns.settings[j][0];
+      btn.classList.add("btn", ...btns.settings[j][1]);
+
+      if (btns.settings[j][2]) {
+        btn.setAttribute("data-close", "true");
+      }
+
+      if (btns.settings[j][3] && typeof btns.settings[j][3] === "function") {
+        btn.addEventListener("click", btns.settings[j][3]);
+      }
+
+      buttons.push(btn);
+    }
+
+    modal.querySelector(".modal-footer").append(...buttons);
+    document.body.append(modal);
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).modal(true);
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i].getAttribute("data-target")).fadeIn(500);
+  }
+};
 
 /***/ }),
 
@@ -644,6 +703,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
 
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("#trigger").click(() => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("#trigger").createModal({
+    text: {
+      title: "Modal title",
+      body: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus alias ut velit expedita molestiae iste
+        `
+    },
+    btns: {
+      count: 2,
+      settings: [["Close", ["btns-danger", "mr-10"], true], ["Save changes", ["btn-success"], false, () => alert("Данные созранены")]]
+    }
+  });
+});
 
 /***/ })
 
