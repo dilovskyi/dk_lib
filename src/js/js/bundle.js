@@ -1874,7 +1874,7 @@ _core__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.carousel = function () {
       if (offset === 0) {
         offset = +width.replace(/\D/g, "") * (slides.length - 1);
       } else {
-        offset -= +width.replace(/\D/g, "");
+        offset = 0;
       }
 
       slidesField.style.transform = `translateX(-${offset}px)`;
@@ -1967,8 +1967,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.createModal = function (
   text,
   btns
 }) {
-  console.log(this);
-
   for (let i = 0; i < this.length; i++) {
     let modal = document.createElement("div");
     modal.classList.add("modal");
@@ -2660,35 +2658,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.post = async function (u
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("#triggerModal").on("click", () => Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("#triggerModal").createModal({
-  text: {
-    title: "Start and end in Cusco!",
-    body: `With the Hiking & Trekking tour Salkantay Trek to Machu Picchu - 8 Days, you have
-      a 8 days tour package taking you through Cusco, Peru and 8 other destinations in Peru. Salkantay Trek to
-      Machu Picchu - 8 Days includes accommodation in a hotel as well as an expert guide, meals, transport and
-      more.
-          `
-  },
-  btns: {
-    count: 2,
-    settings: [["Close", ["btns-danger", "mr-10"], true], ["Save changes", ["btn-success"], false, () => alert("Данные созранены")]]
-  }
-}));
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(".thanksModal").on("click", () => Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(".thanksModal").createModal({
-  text: {
-    title: "Start and end in Cairo! ",
-    body: `With the In-depth Cultural tour Nile Adventure - Felucca cruise, you have a 9 days tour package taking you through Cairo, Egypt and 5 other destinations in Egypt. Nile Adventure - Felucca cruise includes accommodation in a hotel as well as an expert guide, meals, transport and more.`
-  },
-  btns: {
-    count: 1,
-    settings: [["Not awaible at this moment", ["btn-dark"], true]]
-  }
-}));
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])().get("https://reqres.in/api/users/2").then(res => {
-  console.log(res);
-});
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])().timer(".timer", new Date("2021-5-20"));
 
 /***/ })
 

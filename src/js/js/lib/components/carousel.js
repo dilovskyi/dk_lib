@@ -28,10 +28,11 @@ $.prototype.carousel = function () {
 			if (offset === 0) {
 				offset = +width.replace(/\D/g, "") * (slides.length - 1);
 			} else {
-				offset -= +width.replace(/\D/g, "");
+				offset = 0;
 			}
 			slidesField.style.transform = `translateX(-${offset}px)`;
 		});
 	}
 };
+
 $(".carousel").carousel();

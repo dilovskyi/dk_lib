@@ -1,0 +1,50 @@
+.promotion {
+	padding-top: 100px;
+	position: relative;
+	& .container {
+		display: flex;
+		margin-bottom: 30px;
+	}
+	&-text {
+		width: 50%;
+	}
+	&-descr {
+		margin-top: 40px;
+		font-size: 20px;
+		line-height: 24px;
+		font-weight: 300;
+	}
+	&-descr span {
+		font-weight: 700;
+		font-size: 26px;
+	}
+	&-timer {
+		width: 50%;
+		& .title {
+			text-align: right;
+		}
+		& .timer {
+			margin-top: 60px;
+			padding-left: 95px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			&-block {
+				width: 102px;
+				height: 120px;
+				background: #fff;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+				font-size: 16px;
+				font-weight: 300;
+				text-align: center;
+				& span {
+					display: block;
+					margin-top: 20px;
+					margin-bottom: 5px;
+					font-size: 56px;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
