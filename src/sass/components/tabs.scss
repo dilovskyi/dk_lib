@@ -1,0 +1,39 @@
+.tabs {
+	max-width: 600px;
+	&-panel {
+		display: grid;
+		grid-template: auto / repeat(5, auto);
+		width: 100%;
+		min-height: 50px;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		border-radius: 5px 5px 0 0;
+	}
+	&-item {
+		font-size: 18px;
+		line-height: 27px;
+		padding: 10px 20px;
+		border-right: 1px solid rgba(0, 0, 0, 0.2);
+		cursor: pointer;
+		&:last-child {
+			border-right: none;
+		}
+		&--active {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+	}
+	&-content-wrap {
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		border-radius: 0 0 5px 5px;
+		border-top: none;
+	}
+	&-content {
+		min-height: 150px;
+		display: none;
+		padding: 20px;
+		overflow: hidden;
+		&--active {
+			overflow: visible;
+			display: block;
+		}
+	}
+}

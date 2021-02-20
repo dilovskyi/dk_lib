@@ -9,13 +9,15 @@ $.prototype.modal = function (created) {
 			document.body.style.overflow = "hidden";
 		});
 
-		const id = document.querySelector(target);
+		const id = document.querySelectorAll(target);
 		const closeElemens = document.querySelectorAll(`${target} [data-close]`);
 		closeElemens.forEach((element) => {
 			$(element).click(() => {
 				$(target).fadeOut(1500);
-				if (created && id.style.opacity === 0) {
-					id.remove();
+				if (created) {
+					id.forEach((item) => {
+						item.remove();
+					});
 				}
 				document.body.style.overflow = "";
 			});
@@ -26,7 +28,9 @@ $.prototype.modal = function (created) {
 				$(target).fadeOut(500);
 				document.body.style.overflow = "";
 				if (created) {
-					id.remove();
+					id.forEach((item) => {
+						item.remove();
+					});
 				}
 			}
 		});
@@ -36,6 +40,7 @@ $.prototype.modal = function (created) {
 $('[data-toggle="modal"]').modal();
 
 $.prototype.createModal = function ({ text, btns }) {
+	console.log(this);
 	for (let i = 0; i < this.length; i++) {
 		let modal = document.createElement("div");
 		modal.classList.add("modal");

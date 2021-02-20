@@ -20,10 +20,10 @@ $.prototype.off = function (eventName, callback) {
 	return this;
 };
 
-$.prototype.click = function (hendler) {
+$.prototype.click = function (callback) {
 	for (let i = 0; i < this.length; i++) {
-		if (hendler) {
-			this[i].addEventListener("click", hendler);
+		if (callback) {
+			this[i].addEventListener("click", callback);
 		} else {
 			this[i].click();
 		}
