@@ -1,10 +1,14 @@
 import $ from "../core";
 
-$.prototype.carousel = function () {
+$.prototype.carousel = function (
+	sliderWrap = ".carousel-inner",
+	sliderContainer = ".carousel-slides",
+	sliderItem = ".carousel-item"
+) {
 	for (let i = 0; i < this.length; i++) {
-		const width = window.getComputedStyle(this[i].querySelector(".carousel-inner")).width;
-		const slides = this[i].querySelectorAll(".carousel-item");
-		const slidesField = this[i].querySelector(".carousel-slides");
+		const width = window.getComputedStyle(this[i].querySelector(sliderWrap)).width;
+		const slides = this[i].querySelectorAll(sliderItem);
+		const slidesField = this[i].querySelector(sliderContainer);
 
 		slidesField.style.width = 100 * slides.length + "%";
 		slides.forEach((slide) => {

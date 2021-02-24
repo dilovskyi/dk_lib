@@ -35,7 +35,7 @@ $.prototype.index = function () {
 		return item == this[0];
 	});
 };
-//Получить массив подходящих элементов
+//Получить подходящих элементов
 $.prototype.find = function (selector) {
 	const copyObj = Object.assign({}, this);
 	let numberOfItems = 0;
@@ -62,7 +62,7 @@ $.prototype.find = function (selector) {
 	}
 	return this;
 };
-//Получить массив ближайших элементов Selector. False, если не нашли
+//Получить ближайших элементов Selector. False, если не нашли
 $.prototype.closest = function (selector) {
 	let counter = 0;
 
@@ -82,7 +82,7 @@ $.prototype.closest = function (selector) {
 
 	return this;
 };
-//получить массив соседей элемента, не включая него. Вызывается на одном элементе
+//получить соседей элемента, не включая него. Вызывается на одном элементе
 $.prototype.siblings = function () {
 	const copyObj = Object.assign({}, this);
 	let numberOfItems = 0;

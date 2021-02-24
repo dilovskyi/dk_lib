@@ -1847,11 +1847,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-_core__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.carousel = function () {
+_core__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.carousel = function (sliderWrap = ".carousel-inner", sliderContainer = ".carousel-slides", sliderItem = ".carousel-item") {
   for (let i = 0; i < this.length; i++) {
-    const width = window.getComputedStyle(this[i].querySelector(".carousel-inner")).width;
-    const slides = this[i].querySelectorAll(".carousel-item");
-    const slidesField = this[i].querySelector(".carousel-slides");
+    const width = window.getComputedStyle(this[i].querySelector(sliderWrap)).width;
+    const slides = this[i].querySelectorAll(sliderItem);
+    const slidesField = this[i].querySelector(sliderContainer);
     slidesField.style.width = 100 * slides.length + "%";
     slides.forEach(slide => {
       slide.style.width = width;
@@ -1874,7 +1874,7 @@ _core__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.carousel = function () {
       if (offset === 0) {
         offset = +width.replace(/\D/g, "") * (slides.length - 1);
       } else {
-        offset = 0;
+        offset -= +width.replace(/\D/g, "");
       }
 
       slidesField.style.transform = `translateX(-${offset}px)`;
@@ -2223,7 +2223,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.index = function () {
   return childs.findIndex(item => {
     return item == this[0];
   });
-}; //Получить массив подходящих элементов
+}; //Получить подходящих элементов
 
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selector) {
@@ -2254,7 +2254,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selecto
   }
 
   return this;
-}; //Получить массив ближайших элементов Selector. False, если не нашли
+}; //Получить ближайших элементов Selector. False, если не нашли
 
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (selector) {
@@ -2277,7 +2277,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (sele
   }
 
   return this;
-}; //получить массив соседей элемента, не включая него. Вызывается на одном элементе
+}; //получить соседей элемента, не включая него. Вызывается на одном элементе
 
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.siblings = function () {
@@ -2658,6 +2658,37 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.post = async function (u
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
+
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("#triggerModal").on("click", () => Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("#triggerModal").createModal({
+  text: {
+    title: "Start and end in Cusco!",
+    body: `With the Hiking & Trekking tour Salkantay Trek to Machu Picchu - 8 Days, you have
+      a 8 days tour package taking you through Cusco, Peru and 8 other destinations in Peru. Salkantay Trek to
+      Machu Picchu - 8 Days includes accommodation in a hotel as well as an expert guide, meals, transport and
+      more.
+          `
+  },
+  btns: {
+    count: 2,
+    settings: [["Close", ["btns-danger", "mr-10"], true], ["Save changes", ["btn-success"], false, () => alert("Данные созранены")]]
+  }
+}));
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(".thanksModal").on("click", () => Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(".thanksModal").createModal({
+  text: {
+    title: "Start and end in Cairo! ",
+    body: `With the In-depth Cultural tour Nile Adventure - Felucca cruise, you have a 9 days tour package taking you through Cairo, Egypt and 5 other destinations in Egypt. Nile Adventure - Felucca cruise includes accommodation in a hotel as well as an expert guide, meals, transport and more.`
+  },
+  btns: {
+    count: 1,
+    settings: [["Not awaible at this moment", ["btn-dark"], true]]
+  }
+}));
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])().get("https://reqres.in/api/users/2").then(res => {
+  console.log(res);
+});
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])().timer(".timer", new Date("2021-5-20"));
+const lol = Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(".timer").siblings();
+console.log(lol);
 
 /***/ })
 

@@ -1847,11 +1847,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-_core__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.carousel = function () {
+_core__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.carousel = function (sliderWrap = ".carousel-inner", sliderContainer = ".carousel-slides", sliderItem = ".carousel-item") {
   for (let i = 0; i < this.length; i++) {
-    const width = window.getComputedStyle(this[i].querySelector(".carousel-inner")).width;
-    const slides = this[i].querySelectorAll(".carousel-item");
-    const slidesField = this[i].querySelector(".carousel-slides");
+    const width = window.getComputedStyle(this[i].querySelector(sliderWrap)).width;
+    const slides = this[i].querySelectorAll(sliderItem);
+    const slidesField = this[i].querySelector(sliderContainer);
     slidesField.style.width = 100 * slides.length + "%";
     slides.forEach(slide => {
       slide.style.width = width;
@@ -1967,8 +1967,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.createModal = function (
   text,
   btns
 }) {
-  console.log(this);
-
   for (let i = 0; i < this.length; i++) {
     let modal = document.createElement("div");
     modal.classList.add("modal");
@@ -2225,7 +2223,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.index = function () {
   return childs.findIndex(item => {
     return item == this[0];
   });
-}; //Получить массив подходящих элементов
+}; //Получить подходящих элементов
 
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selector) {
@@ -2256,7 +2254,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selecto
   }
 
   return this;
-}; //Получить массив ближайших элементов Selector. False, если не нашли
+}; //Получить ближайших элементов Selector. False, если не нашли
 
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (selector) {
@@ -2279,7 +2277,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (sele
   }
 
   return this;
-}; //получить массив соседей элемента, не включая него. Вызывается на одном элементе
+}; //получить соседей элемента, не включая него. Вызывается на одном элементе
 
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.siblings = function () {
@@ -2689,6 +2687,8 @@ Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])().get("https://reqres.i
   console.log(res);
 });
 Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])().timer(".timer", new Date("2021-5-20"));
+const lol = Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(".timer").siblings();
+console.log(lol);
 
 /***/ })
 

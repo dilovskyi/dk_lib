@@ -41,3 +41,6 @@ $()
 	});
 
 $().timer(".timer", new Date("2021-5-20"));
+
+const lol = $(".timer").siblings();
+console.log(lol);

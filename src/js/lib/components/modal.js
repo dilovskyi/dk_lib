@@ -40,7 +40,6 @@ $.prototype.modal = function (created) {
 $('[data-toggle="modal"]').modal();
 
 $.prototype.createModal = function ({ text, btns }) {
-	console.log(this);
 	for (let i = 0; i < this.length; i++) {
 		let modal = document.createElement("div");
 		modal.classList.add("modal");
