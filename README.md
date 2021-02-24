@@ -2,8 +2,8 @@
 
 ### Install
 Скачайте и установите файлы в свой проект.
-CSS - https://github.com/dilovskyi/dk_lib/blob/main/dist/assets/css/bundle.css
-Js - https://github.com/dilovskyi/dk_lib/blob/main/dist/js/bundle.js
+<br>CSS - https://github.com/dilovskyi/dk_lib/blob/main/dist/assets/css/bundle.css
+<br>Js - https://github.com/dilovskyi/dk_lib/blob/main/dist/js/bundle.js
 
 <b>Реализовал концепцию внутренней работы готовых библиотек Java-script, для собственного понимания, как реализовано "под капотом".</b>
 
