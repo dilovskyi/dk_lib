@@ -1,5 +1,10 @@
 # dk_lib
 
+###Install
+Скачайте и установите файлы в свой проект.
+CSS - https://github.com/dilovskyi/dk_lib/blob/main/dist/assets/css/bundle.css
+Js - https://github.com/dilovskyi/dk_lib/blob/main/dist/js/bundle.js
+
 <b>Реализовал концепцию внутренней работы готовых библиотек Java-script, для собственного понимания, как реализовано "под капотом".</b>
 
 [`lib.js`](https://github.com/dilovskyi/dilo_library/blob/main/src/js/lib/lib.js) - Содержит зависимости всех нижеперечисленных файлов. И последующий экспорт функции `$`, со всеми описаными методами в данной библиотеке</dd>
