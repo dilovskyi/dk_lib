@@ -1,6 +1,6 @@
 # dk_lib
 
-###Install
+### Install
 Скачайте и установите файлы в свой проект.
 CSS - https://github.com/dilovskyi/dk_lib/blob/main/dist/assets/css/bundle.css
 Js - https://github.com/dilovskyi/dk_lib/blob/main/dist/js/bundle.js
