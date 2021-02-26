@@ -201,7 +201,7 @@ $("#triggerModal").on("click", () =>					//Событие клика
 <br>display - задает css свойсто display
 <br>fimalAnimation - функция, которая вызывается после выполнения.
 ### [handlers.js](https://github.com/dilovskyi/dilo_library/blob/main/src/js/lib/modules/handlers.js)
-# Js/servises.js
+# js/servises
 ### [requests.js](https://github.com/dilovskyi/dk_lib/blob/main/src/js/lib/services/requests.js)
 `$().get(url, dataTypeAnswer = "json")` - Вызов get запроса
 <br>url - на который нужно отправить завпрос
