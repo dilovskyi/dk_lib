@@ -200,7 +200,13 @@ $("#triggerModal").on("click", () =>					//Событие клика
 <br>duration - длительность появления.
 <br>display - задает css свойсто display
 <br>fimalAnimation - функция, которая вызывается после выполнения.
-### [handlers.js](https://github.com/dilovskyi/dilo_library/blob/main/src/js/lib/modules/handlers.js)
+### [handlers.js](https://github.com/dilovskyi/dk_lib/blob/main/src/js/lib/modules/handlers.js)
+`$(elem).on(eventName, callback)` - Навешивает слушатесь событий на элемент(ы). Оба аргумента обязательны.
+***
+`$(elem).on(eventName, callback)` - Удаляет слушатель событий с элемента(ов). Оба аргумента обязательны.
+***
+`$(elem).click(callback)` - Навешивает слушатель "Click". Применяет callback, при нажатии на elem.
+<br>Eсли аргумент не передан - имитирует клин по ele
 # js/servises
 ### [requests.js](https://github.com/dilovskyi/dk_lib/blob/main/src/js/lib/services/requests.js)
 `$().get(url, dataTypeAnswer = "json")` - Вызов get запроса
